@@ -191,7 +191,7 @@ public class DlgCekinMobileJKN extends javax.swing.JDialog {
         getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_START);
 
         jPanel1.setBackground(new java.awt.Color(238, 238, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 215, 255)), "::[ Cek Data Pasien!!! ]::", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Poppins", 0, 30), new java.awt.Color(0, 131, 62))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 215, 255)), "::[ Cek Booking Pasien JKN Mobile !!! ]::", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Poppins", 0, 30), new java.awt.Color(0, 131, 62))); // NOI18N
         jPanel1.setForeground(new java.awt.Color(0, 131, 62));
         jPanel1.setPreferredSize(new java.awt.Dimension(400, 70));
         jPanel1.setLayout(new java.awt.GridBagLayout());
@@ -218,9 +218,9 @@ public class DlgCekinMobileJKN extends javax.swing.JDialog {
 
         jLabel28.setForeground(new java.awt.Color(0, 131, 62));
         jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel28.setText("No Rujukan / No Peserta");
+        jLabel28.setText("Nomor Peserta / Kartu JKN");
         jLabel28.setFont(new java.awt.Font("Poppins", 0, 36)); // NOI18N
-        jLabel28.setPreferredSize(new java.awt.Dimension(500, 75));
+        jLabel28.setPreferredSize(new java.awt.Dimension(550, 75));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 13;
@@ -308,7 +308,7 @@ public class DlgCekinMobileJKN extends javax.swing.JDialog {
     private void NoRMPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NoRMPasienKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-            DlgRegistrasiSEPPertama form = new DlgRegistrasiSEPPertama(null, true);
+            DlgCekInJKN form = new DlgCekInJKN(null, true);
             form.tampil(NoRMPasien.getText());
             form.setSize(this.getWidth(), this.getHeight());
             form.setLocationRelativeTo(jPanel1);
@@ -325,14 +325,35 @@ public class DlgCekinMobileJKN extends javax.swing.JDialog {
     }//GEN-LAST:event_BtnCloseActionPerformed
 
     private void BtnClose2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnClose2ActionPerformed
-        this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-        DlgRegistrasiSEPPertama form = new DlgRegistrasiSEPPertama(null, true);
-        form.tampil(NoRMPasien.getText());
-        form.setSize(this.getWidth(), this.getHeight());
-        form.setLocationRelativeTo(jPanel1);
-        this.dispose();
-        form.setVisible(true);
-        this.setCursor(Cursor.getDefaultCursor());
+        
+        if (!NoRMPasien.getText().equals("")) {
+            if (Sequel.cariInteger("select count(nobooking) from referensi_mobilejkn_bpjs where referensi_mobilejkn_bpjs.nomorkartu='" + NoRMPasien.getText() + "'") == 1) {
+                this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+                DlgCekInJKN form = new DlgCekInJKN(null, true);
+                form.tampil(NoRMPasien.getText());
+                form.setSize(this.getWidth(), this.getHeight());
+                form.setLocationRelativeTo(jPanel1);
+                this.dispose();
+                form.setVisible(true);
+                this.setCursor(Cursor.getDefaultCursor());
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Data Booking pasien JKN MObile tidak ditemukan!");
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Isi Kolom masih kosong ");
+        }
+        
+        
+//        this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+//        DlgCekInJKN form = new DlgCekInJKN(null, true);
+//        form.tampil(NoRMPasien.getText());
+//        form.setSize(this.getWidth(), this.getHeight());
+//        form.setLocationRelativeTo(jPanel1);
+//        this.dispose();
+//        form.setVisible(true);
+//        this.setCursor(Cursor.getDefaultCursor());
+        
     }//GEN-LAST:event_BtnClose2ActionPerformed
 
     /**

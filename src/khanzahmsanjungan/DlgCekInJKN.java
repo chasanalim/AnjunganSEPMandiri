@@ -869,14 +869,14 @@ public class DlgCekInJKN extends javax.swing.JDialog {
 
     }
     
-    public void tampil(String kodebooking) {
+    public void tampil(String noka) {
        try {
             psbook = koneksi.prepareStatement("SELECT referensi_mobilejkn_bpjs.nobooking, referensi_mobilejkn_bpjs.tanggalperiksa, pasien.nm_pasien,"
                     + "pasien.no_rkm_medis,maping_dokter_dpjpvclaim.nm_dokter_bpjs,poliklinik.nm_poli,referensi_mobilejkn_bpjs.nomorantrean "
                     + "FROM referensi_mobilejkn_bpjs INNER JOIN pasien INNER JOIN maping_dokter_dpjpvclaim "
                     + "INNER JOIN poliklinik ON referensi_mobilejkn_bpjs.norm = pasien.no_rkm_medis AND maping_dokter_dpjpvclaim.kd_dokter_bpjs = referensi_mobilejkn_bpjs.kodedokter "
                     + "AND poliklinik.kd_poli = referensi_mobilejkn_bpjs.kodepoli WHERE "
-                    + "referensi_mobilejkn_bpjs.tanggalperiksa = CURRENT_DATE () and referensi_mobilejkn_bpjs.nobooking ="+ kodebooking );
+                    + "referensi_mobilejkn_bpjs.tanggalperiksa = CURRENT_DATE () and referensi_mobilejkn_bpjs.nomorkartu ="+ noka );
             try {
 //                psbook.setString(1, kodebooking);
                 rsbook = psbook.executeQuery();
