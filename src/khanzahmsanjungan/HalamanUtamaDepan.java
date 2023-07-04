@@ -45,10 +45,8 @@ public class HalamanUtamaDepan extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         PanelWall = new usu.widget.glass.PanelGlass();
         jPanel1 = new component.Panel();
-        btnAdmin2 = new widget.ButtonBig();
-        btnAdmin7 = new widget.ButtonBig();
-        btnAdmin6 = new widget.ButtonBig();
         btnAdmin5 = new widget.ButtonBig();
+        btnAdmin6 = new widget.ButtonBig();
         btnAdmin8 = new widget.ButtonBig();
         btnAdmin9 = new widget.ButtonBig();
 
@@ -74,10 +72,10 @@ public class HalamanUtamaDepan extends javax.swing.JFrame {
         jPanel2.setForeground(new java.awt.Color(238, 238, 255));
 
         PanelWall.setBackground(new java.awt.Color(238, 238, 255));
-        PanelWall.setBackgroundImage(new javax.swing.ImageIcon(getClass().getResource("/picture/indriatikars.png"))); // NOI18N
+        PanelWall.setBackgroundImage(new javax.swing.ImageIcon(getClass().getResource("/picture/rsub2.png"))); // NOI18N
         PanelWall.setBackgroundImageType(usu.widget.constan.BackgroundConstan.BACKGROUND_IMAGE_STRECT);
         PanelWall.setForeground(new java.awt.Color(238, 238, 255));
-        PanelWall.setPreferredSize(new java.awt.Dimension(500, 150));
+        PanelWall.setPreferredSize(new java.awt.Dimension(650, 150));
         PanelWall.setRound(false);
         PanelWall.setWarna(new java.awt.Color(238, 238, 255));
 
@@ -85,7 +83,7 @@ public class HalamanUtamaDepan extends javax.swing.JFrame {
         PanelWall.setLayout(PanelWallLayout);
         PanelWallLayout.setHorizontalGroup(
             PanelWallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+            .addGap(0, 650, Short.MAX_VALUE)
         );
         PanelWallLayout.setVerticalGroup(
             PanelWallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -101,29 +99,17 @@ public class HalamanUtamaDepan extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(1280, 1024));
         jPanel1.setLayout(new java.awt.GridLayout(3, 0));
 
-        btnAdmin2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/48x48/selfservice.png"))); // NOI18N
-        btnAdmin2.setText("PENDAFTARAN POLIKLINIK");
-        btnAdmin2.setFont(new java.awt.Font("Poppins", 1, 36)); // NOI18N
-        btnAdmin2.setIconTextGap(0);
-        btnAdmin2.setPreferredSize(new java.awt.Dimension(200, 90));
-        btnAdmin2.addActionListener(new java.awt.event.ActionListener() {
+        btnAdmin5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/48x48/BPJS_Kesehatan_Logo.png"))); // NOI18N
+        btnAdmin5.setText("SEP KUNJUNGAN PERTAMA");
+        btnAdmin5.setFont(new java.awt.Font("Poppins", 1, 36)); // NOI18N
+        btnAdmin5.setIconTextGap(0);
+        btnAdmin5.setPreferredSize(new java.awt.Dimension(200, 90));
+        btnAdmin5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAdmin2ActionPerformed(evt);
+                btnAdmin5ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAdmin2);
-
-        btnAdmin7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/48x48/checkin.png"))); // NOI18N
-        btnAdmin7.setText("CEK IN REGISTRASI");
-        btnAdmin7.setFont(new java.awt.Font("Poppins", 1, 36)); // NOI18N
-        btnAdmin7.setIconTextGap(0);
-        btnAdmin7.setPreferredSize(new java.awt.Dimension(200, 90));
-        btnAdmin7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAdmin7ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnAdmin7);
+        jPanel1.add(btnAdmin5);
 
         btnAdmin6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/48x48/BPJS_Kesehatan_Logo.png"))); // NOI18N
         btnAdmin6.setText("SEP KONTROL");
@@ -136,18 +122,6 @@ public class HalamanUtamaDepan extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnAdmin6);
-
-        btnAdmin5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/48x48/BPJS_Kesehatan_Logo.png"))); // NOI18N
-        btnAdmin5.setText("SEP KUNJUNGAN PERTAMA");
-        btnAdmin5.setFont(new java.awt.Font("Poppins", 1, 36)); // NOI18N
-        btnAdmin5.setIconTextGap(0);
-        btnAdmin5.setPreferredSize(new java.awt.Dimension(200, 90));
-        btnAdmin5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAdmin5ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnAdmin5);
 
         btnAdmin8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/48x48/mobilejkn48.png"))); // NOI18N
         btnAdmin8.setText("Check In MobileJKN");
@@ -185,20 +159,6 @@ public class HalamanUtamaDepan extends javax.swing.JFrame {
         pilih.setVisible(true);
     }//GEN-LAST:event_btnAdmin6ActionPerformed
 
-    private void btnAdmin2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdmin2ActionPerformed
-        DlgCekNoRM pilih = new DlgCekNoRM(null, true);
-        pilih.setSize(this.getWidth(), this.getHeight());
-        pilih.setLocationRelativeTo(this);
-        pilih.setVisible(true);
-    }//GEN-LAST:event_btnAdmin2ActionPerformed
-
-    private void btnAdmin7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdmin7ActionPerformed
-        DlgCekBooking pilih = new DlgCekBooking(null, true);
-        pilih.setSize(this.getWidth(), this.getHeight());
-        pilih.setLocationRelativeTo(this);
-        pilih.setVisible(true);
-    }//GEN-LAST:event_btnAdmin7ActionPerformed
-
     private void btnAdmin5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdmin5ActionPerformed
         DlgCekKunjunganPertamaSEP pilih = new DlgCekKunjunganPertamaSEP(null, true);
         pilih.setSize(this.getWidth(), this.getHeight());
@@ -207,12 +167,12 @@ public class HalamanUtamaDepan extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAdmin5ActionPerformed
 
     private void btnAdmin8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdmin8ActionPerformed
-//        DlgCekinMobileJKN pilih = new DlgCekinMobileJKN(null, true);
-//        pilih.setSize(this.getWidth(), this.getHeight());
-//        pilih.setLocationRelativeTo(this);
-//        pilih.setVisible(true);
+        DlgCekinMobileJKN pilih = new DlgCekinMobileJKN(null, true);
+        pilih.setSize(this.getWidth(), this.getHeight());
+        pilih.setLocationRelativeTo(this);
+        pilih.setVisible(true);
 
-        JOptionPane.showMessageDialog(rootPane, "Mohon maaf, fitur masih dalam tahap pengembangan");
+//        JOptionPane.showMessageDialog(rootPane, "Mohon maaf, fitur masih dalam tahap pengembangan");
     }//GEN-LAST:event_btnAdmin8ActionPerformed
 
     private void btnAdmin9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdmin9ActionPerformed
@@ -267,10 +227,8 @@ public class HalamanUtamaDepan extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private usu.widget.glass.PanelGlass PanelWall;
-    private widget.ButtonBig btnAdmin2;
     private widget.ButtonBig btnAdmin5;
     private widget.ButtonBig btnAdmin6;
-    private widget.ButtonBig btnAdmin7;
     private widget.ButtonBig btnAdmin8;
     private widget.ButtonBig btnAdmin9;
     private widget.Label jLabel39;
