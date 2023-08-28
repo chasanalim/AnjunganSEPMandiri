@@ -93,7 +93,6 @@ public class DlgCekSKDPKontrol extends javax.swing.JDialog {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         LblKdPoli = new component.Label();
         LblKdDokter = new component.Label();
@@ -104,9 +103,9 @@ public class DlgCekSKDPKontrol extends javax.swing.JDialog {
         PanelWall = new usu.widget.glass.PanelGlass();
         jPanel1 = new component.Panel();
         NoRMPasien = new component.TextBox();
-        jLabel28 = new component.Label();
         BtnClose = new widget.ButtonBig();
         BtnClose2 = new widget.ButtonBig();
+        jLabel28 = new component.Label();
 
         LblKdPoli.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         LblKdPoli.setText("Norm");
@@ -195,7 +194,7 @@ public class DlgCekSKDPKontrol extends javax.swing.JDialog {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 215, 255)), "::[ Cek Data Kontrol BPJS!!! ]::", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Poppins", 0, 24), new java.awt.Color(0, 131, 62))); // NOI18N
         jPanel1.setForeground(new java.awt.Color(0, 131, 62));
         jPanel1.setPreferredSize(new java.awt.Dimension(400, 70));
-        jPanel1.setLayout(new java.awt.GridBagLayout());
+        jPanel1.setLayout(null);
 
         NoRMPasien.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 131, 62), 2, true));
         NoRMPasien.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -211,22 +210,8 @@ public class DlgCekSKDPKontrol extends javax.swing.JDialog {
                 NoRMPasienKeyPressed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 14;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        jPanel1.add(NoRMPasien, gridBagConstraints);
-
-        jLabel28.setForeground(new java.awt.Color(0, 131, 62));
-        jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel28.setText("No Surat Kontrol");
-        jLabel28.setFont(new java.awt.Font("Poppins", 0, 24)); // NOI18N
-        jLabel28.setPreferredSize(new java.awt.Dimension(300, 75));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 14;
-        gridBagConstraints.ipady = 5;
-        jPanel1.add(jLabel28, gridBagConstraints);
+        jPanel1.add(NoRMPasien);
+        NoRMPasien.setBounds(260, 150, 350, 75);
 
         BtnClose.setBackground(new java.awt.Color(255, 255, 255));
         BtnClose.setForeground(new java.awt.Color(51, 51, 51));
@@ -244,10 +229,8 @@ public class DlgCekSKDPKontrol extends javax.swing.JDialog {
                 BtnCloseActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 14;
-        jPanel1.add(BtnClose, gridBagConstraints);
+        jPanel1.add(BtnClose);
+        BtnClose.setBounds(710, 150, 100, 75);
 
         BtnClose2.setBackground(new java.awt.Color(255, 255, 255));
         BtnClose2.setForeground(new java.awt.Color(51, 51, 51));
@@ -264,10 +247,16 @@ public class DlgCekSKDPKontrol extends javax.swing.JDialog {
                 BtnClose2ActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 14;
-        jPanel1.add(BtnClose2, gridBagConstraints);
+        jPanel1.add(BtnClose2);
+        BtnClose2.setBounds(610, 150, 100, 75);
+
+        jLabel28.setForeground(new java.awt.Color(0, 131, 62));
+        jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel28.setText("NO SURAT KONTROL");
+        jLabel28.setFont(new java.awt.Font("Poppins", 0, 36)); // NOI18N
+        jLabel28.setPreferredSize(new java.awt.Dimension(600, 75));
+        jPanel1.add(jLabel28);
+        jLabel28.setBounds(220, 70, 600, 75);
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
