@@ -211,7 +211,7 @@ public class DlgCekSKDPKontrol extends javax.swing.JDialog {
             }
         });
         jPanel1.add(NoRMPasien);
-        NoRMPasien.setBounds(260, 150, 350, 75);
+        NoRMPasien.setBounds(250, 150, 360, 75);
 
         BtnClose.setBackground(new java.awt.Color(255, 255, 255));
         BtnClose.setForeground(new java.awt.Color(51, 51, 51));
