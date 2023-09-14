@@ -200,11 +200,6 @@ public class DlgCekKunjunganPertamaSEP extends javax.swing.JDialog {
         NoRMPasien.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         NoRMPasien.setFont(new java.awt.Font("Poppins", 0, 36)); // NOI18N
         NoRMPasien.setPreferredSize(new java.awt.Dimension(350, 75));
-        NoRMPasien.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NoRMPasienActionPerformed(evt);
-            }
-        });
         NoRMPasien.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 NoRMPasienKeyPressed(evt);
@@ -290,10 +285,6 @@ public class DlgCekKunjunganPertamaSEP extends javax.swing.JDialog {
     private void BiayaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BiayaKeyPressed
         // TODO add your handling code here:
     }//GEN-LAST:event_BiayaKeyPressed
-
-    private void NoRMPasienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoRMPasienActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NoRMPasienActionPerformed
 
     private void NoRMPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NoRMPasienKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
