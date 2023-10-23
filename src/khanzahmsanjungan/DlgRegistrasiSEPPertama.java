@@ -1,3 +1,4 @@
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -23,6 +24,7 @@ import fungsi.akses;
 import fungsi.koneksiDB;
 import fungsi.sekuel;
 import fungsi.validasi;
+import fungsi.validasi2;
 import java.awt.AWTException;
 import java.awt.Cursor;
 import java.awt.Robot;
@@ -70,6 +72,7 @@ public class DlgRegistrasiSEPPertama extends javax.swing.JDialog {
     private Connection koneksi = koneksiDB.condb();
     private sekuel Sequel = new sekuel();
     private validasi Valid = new validasi();
+    private validasi2 ValidPrint = new validasi2();
     private PreparedStatement ps, ps3;
     private ResultSet rs, rs3;
     private ApiBPJS api = new ApiBPJS();
@@ -2259,6 +2262,7 @@ public class DlgRegistrasiSEPPertama extends javax.swing.JDialog {
                         NoKartu.getText(), Valid.SetTgl(TanggalSEP.getSelectedItem().toString()), KdDPJP.getText(), KdPoli.getText()
                     });
                     MnCetakRegisterActionPerformed(TNoRawat.getText());
+//                    MnCetakRegisterActionPerformed(TNoRawat.getText());
                         
                 }
 
@@ -2358,7 +2362,14 @@ public class DlgRegistrasiSEPPertama extends javax.swing.JDialog {
                 KdPenyakit.setText(response.path("diagnosa").path("kode").asText());
                 NmPenyakit.setText(response.path("diagnosa").path("nama").asText());
                 NoRujukan.setText(response.path("noKunjungan").asText());
-                Kelas.setSelectedItem(response.path("peserta").path("hakKelas").path("kode").asText() + ". " + response.path("peserta").path("hakKelas").path("keterangan").asText().replaceAll("KELAS", "Kelas"));
+//                Kelas.setSelectedItem(response.path("peserta").path("hakKelas").path("kode").asText() + ". " + response.path("peserta").path("hakKelas").path("keterangan").asText().replaceAll("KELAS", "Kelas"));
+                if(response.path("peserta").path("hakKelas").path("kode").asText().toLowerCase().equals("1")){
+                        Kelas.setSelectedIndex(0);
+                }else if(response.path("peserta").path("hakKelas").path("kode").asText().toLowerCase().equals("2")){
+                        Kelas.setSelectedIndex(1);
+                }else if(response.path("peserta").path("hakKelas").path("kode").asText().toLowerCase().equals("3")){
+                        Kelas.setSelectedIndex(2);
+                }
                 prb = response.path("peserta").path("informasi").path("prolanisPRB").asText().replaceAll("null", "");
                 peserta = response.path("peserta").path("jenisPeserta").path("keterangan").asText();
                 NoTelp.setText(response.path("peserta").path("mr").path("noTelepon").asText());
@@ -2459,7 +2470,14 @@ public class DlgRegistrasiSEPPertama extends javax.swing.JDialog {
                 KdPenyakit.setText(response.path("diagnosa").path("kode").asText());
                 NmPenyakit.setText(response.path("diagnosa").path("nama").asText());
                 NoRujukan.setText(response.path("noKunjungan").asText());
-                Kelas.setSelectedItem(response.path("peserta").path("hakKelas").path("kode").asText() + ". " + response.path("peserta").path("hakKelas").path("keterangan").asText().replaceAll("KELAS", "Kelas"));
+              //Kelas.setSelectedItem(response.path("peserta").path("hakKelas").path("kode").asText() + ". " + response.path("peserta").path("hakKelas").path("keterangan").asText().replaceAll("KELAS", "Kelas"));
+                 if(response.path("peserta").path("hakKelas").path("kode").asText().toLowerCase().equals("1")){
+                        Kelas.setSelectedIndex(0);
+                }else if(response.path("peserta").path("hakKelas").path("kode").asText().toLowerCase().equals("2")){
+                        Kelas.setSelectedIndex(1);
+                }else if(response.path("peserta").path("hakKelas").path("kode").asText().toLowerCase().equals("3")){
+                        Kelas.setSelectedIndex(2);
+                }
                 prb = response.path("peserta").path("informasi").path("prolanisPRB").asText().replaceAll("null", "");
                 peserta = response.path("peserta").path("jenisPeserta").path("keterangan").asText();
                 NoTelp.setText(response.path("peserta").path("mr").path("noTelepon").asText());
@@ -2564,7 +2582,14 @@ public class DlgRegistrasiSEPPertama extends javax.swing.JDialog {
                         kodedokterreg = Sequel.cariIsi("select kd_dokter from maping_dokter_dpjpvclaim where kd_dokter_bpjs=?", KdDPJP.getText());
                     }
                     NoSKDP.setText(noSKDP.toUpperCase());
-                    Kelas.setSelectedItem(response.path("hakKelas").path("kode").asText() + ". " + response.path("hakKelas").path("keterangan").asText().replaceAll("KELAS", "Kelas"));
+                //  Kelas.setSelectedItem(response.path("hakKelas").path("kode").asText() + ". " + response.path("hakKelas").path("keterangan").asText().replaceAll("KELAS", "Kelas"));
+                     if(response.path("peserta").path("hakKelas").path("kode").asText().toLowerCase().equals("1")){
+                        Kelas.setSelectedIndex(0);
+                    }else if(response.path("peserta").path("hakKelas").path("kode").asText().toLowerCase().equals("2")){
+                        Kelas.setSelectedIndex(1);
+                    }else if(response.path("peserta").path("hakKelas").path("kode").asText().toLowerCase().equals("3")){
+                        Kelas.setSelectedIndex(2);
+                    }
                     prb = "";
                     peserta = response.path("jenisPeserta").path("keterangan").asText();
                     NoTelp.setText(response.path("mr").path("noTelepon").asText());
@@ -3026,7 +3051,7 @@ public class DlgRegistrasiSEPPertama extends javax.swing.JDialog {
                 StringSelection stringSelectionuser = new StringSelection(userfinger);
                 Clipboard clipboarduser = Toolkit.getDefaultToolkit().getSystemClipboard();
                 clipboarduser.setContents(stringSelectionuser, stringSelectionuser);
-                Thread.sleep(1000);
+                Thread.sleep(3000);
                 robot.keyPress(KeyEvent.VK_CONTROL);
                 robot.keyPress(KeyEvent.VK_V);
                 robot.keyRelease(KeyEvent.VK_V);
@@ -3043,7 +3068,7 @@ public class DlgRegistrasiSEPPertama extends javax.swing.JDialog {
                 robot.keyRelease(KeyEvent.VK_CONTROL);
                 robot.keyPress(KeyEvent.VK_ENTER);
                 robot.keyRelease(KeyEvent.VK_ENTER);
-                Thread.sleep(1000);
+                Thread.sleep(2000);
                 StringSelection stringSelectionnokartu = new StringSelection(NoKartu.getText());
                 Clipboard clipboardnokartu = Toolkit.getDefaultToolkit().getSystemClipboard();
                 clipboardnokartu.setContents(stringSelectionnokartu, stringSelectionnokartu);
