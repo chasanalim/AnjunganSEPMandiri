@@ -99,6 +99,7 @@ public class HalamanUtamaDepan extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(1280, 1024));
         jPanel1.setLayout(new java.awt.GridLayout(3, 0));
 
+        btnAdmin5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 0), 1, true));
         btnAdmin5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/48x48/BPJS_Kesehatan_Logo.png"))); // NOI18N
         btnAdmin5.setText("SEP KUNJUNGAN PERTAMA");
         btnAdmin5.setFont(new java.awt.Font("Poppins", 1, 36)); // NOI18N
@@ -111,6 +112,7 @@ public class HalamanUtamaDepan extends javax.swing.JFrame {
         });
         jPanel1.add(btnAdmin5);
 
+        btnAdmin6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 0), 1, true));
         btnAdmin6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/48x48/BPJS_Kesehatan_Logo.png"))); // NOI18N
         btnAdmin6.setText("SEP KONTROL");
         btnAdmin6.setFont(new java.awt.Font("Poppins", 1, 36)); // NOI18N
@@ -123,6 +125,7 @@ public class HalamanUtamaDepan extends javax.swing.JFrame {
         });
         jPanel1.add(btnAdmin6);
 
+        btnAdmin8.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 0), 1, true));
         btnAdmin8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/48x48/mobilejkn48.png"))); // NOI18N
         btnAdmin8.setText("Check In MobileJKN");
         btnAdmin8.setFont(new java.awt.Font("Poppins", 1, 36)); // NOI18N
@@ -135,6 +138,7 @@ public class HalamanUtamaDepan extends javax.swing.JFrame {
         });
         jPanel1.add(btnAdmin8);
 
+        btnAdmin9.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 0), 1, true));
         btnAdmin9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/48x48/BPJS_Kesehatan_Logo.png"))); // NOI18N
         btnAdmin9.setText("KONTROL BEDA POLI");
         btnAdmin9.setFont(new java.awt.Font("Poppins", 1, 36)); // NOI18N
