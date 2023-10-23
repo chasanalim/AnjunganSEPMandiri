@@ -3051,7 +3051,7 @@ public class DlgRegistrasiSEPPertama extends javax.swing.JDialog {
                 StringSelection stringSelectionuser = new StringSelection(userfinger);
                 Clipboard clipboarduser = Toolkit.getDefaultToolkit().getSystemClipboard();
                 clipboarduser.setContents(stringSelectionuser, stringSelectionuser);
-                Thread.sleep(3000);
+                Thread.sleep(2000);
                 robot.keyPress(KeyEvent.VK_CONTROL);
                 robot.keyPress(KeyEvent.VK_V);
                 robot.keyRelease(KeyEvent.VK_V);
